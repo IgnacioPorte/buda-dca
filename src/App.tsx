@@ -15,6 +15,7 @@ import { subMonths, startOfMonth } from "date-fns";
 import { Skeleton } from "./components/ui/skeleton";
 import Chart from "@/components/chart";
 import { Button } from "./components/ui/button";
+import Table from "./components/dcaTable";
 import { calculateDCAInvestment } from "./utils/dca";
 
 function App() {
@@ -98,6 +99,13 @@ function App() {
             <Skeleton className="h-full w-full rounded-xl" />
           ) : (
             <Chart data={data} />
+          )}
+        </div>
+        <div className="flex flex-col gap-2 md:w-2/3 w-full">
+          {data.length === 0 ? (
+            <Skeleton className="h-full w-full rounded-xl" />
+          ) : (
+            <Table data={data} />
           )}
         </div>
       </div>
