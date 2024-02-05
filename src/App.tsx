@@ -9,8 +9,11 @@ import {
 import Bitcoin from "@/assets/bitcoin.png";
 import { Input } from "@/components/ui/input";
 import { DatePicker } from "@/components/datePicker";
+import { getBTCCLPPriceForDates } from "@/api/trades";
 import { useEffect, useState } from "react";
 import { subMonths, startOfMonth } from "date-fns";
+import { Button } from "./components/ui/button";
+import { calculateDCAInvestment } from "./utils/dca";
 
 function App() {
   const [selectedCrypto, setCrypto] = useState("Bitcoin");
@@ -22,6 +25,15 @@ function App() {
   const [endDate, setEndDate] = useState(startOfMonth(new Date()));
   const [quantity, setQuantity] = useState(10000);
   const [data, setData] = useState<any[]>([]);
+
+  const calculate = async () => {
+    const prices = await getBTCCLPPriceForDates(startDate, endDate);
+    setData(calculateDCAInvestment(prices, quantity));
+  };
+
+  useEffect(() => {
+    calculate();
+  }, []);
   return (
     <>
       <div className="flex flex-row items-center justify-center gap-5">
@@ -77,6 +89,7 @@ function App() {
           <p className="text-lg  text-left">Fecha de fin</p>
           <DatePicker selectedDate={endDate} onDateChange={setEndDate} />
 
+          <Button onClick={calculate}>Calcular</Button>
         </div>
       </div>
     </>
