@@ -1,4 +1,4 @@
-import "./App.css";
+import { useEffect, useState } from "react";
 import {
   Select,
   SelectContent,
@@ -6,19 +6,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Bitcoin from "@/assets/bitcoin.png";
+
 import { Input } from "@/components/ui/input";
 import { DatePicker } from "@/components/datePicker";
-import { getBTCCLPPriceForDates } from "@/api/trades";
-import { useEffect, useState } from "react";
-import { subMonths, startOfMonth } from "date-fns";
 import { Skeleton } from "./components/ui/skeleton";
-import Chart from "@/components/chart";
 import { Button } from "./components/ui/button";
+import Chart from "@/components/chart";
 import Table from "./components/dcaTable";
+
+import { getBTCCLPPriceForDates } from "@/api/trades";
+
+import { startOfMonth, subMonths } from "date-fns";
 import { calculateDCAInvestment } from "./utils/dca";
-import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
+
+import Bitcoin from "@/assets/bitcoin.png";
+import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
+import "./App.css";
+
 import { MonthlyDCAInvestment } from "@/types";
 
 function App() {
