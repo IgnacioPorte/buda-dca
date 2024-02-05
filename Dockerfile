@@ -13,11 +13,8 @@ RUN bun install
 # Build the app
 RUN bun run build
 
-# Expose the proxy port
-EXPOSE 8010
-
 # Expose the port app port
 EXPOSE 8080
 
 # Use a shell command to run both the proxy and the app concurrently
-CMD sh -c "bun run proxy & bun run preview"
+CMD sh -c "bun run preview"

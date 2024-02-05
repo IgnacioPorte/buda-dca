@@ -12,8 +12,22 @@ export default defineConfig({
   preview: {
     port: 8080,
     strictPort: true,
+    proxy: {
+      "/api": {
+        target: "https://www.buda.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/api/v2"),
+      },
+    },
   },
   server: {
+    proxy: {
+      "/api": {
+        target: "https://www.buda.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "/api/v2"),
+      },
+    },
     port: 8080,
     strictPort: true,
     host: true,
