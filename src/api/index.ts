@@ -3,7 +3,7 @@ import rateLimit from "axios-rate-limit";
 
 const api = rateLimit(
   axios.create({
-    baseURL: "http://localhost:8010/proxy/api/v2",
+    baseURL: "https://lionfish-app-yf8mx.ondigitalocean.app/proxy/api/v2",
     headers: {
       "Content-Type": "application/json",
     },
