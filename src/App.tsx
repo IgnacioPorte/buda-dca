@@ -8,71 +8,76 @@ import {
 } from "@/components/ui/select";
 import Bitcoin from "@/assets/bitcoin.png";
 import { Input } from "@/components/ui/input";
-import { DatePicker } from "@/components/ui/datePicker";
+import { DatePicker } from "@/components/datePicker";
+import { useEffect, useState } from "react";
+import { subMonths, startOfMonth } from "date-fns";
 
 function App() {
+  const [selectedCrypto, setCrypto] = useState("Bitcoin");
+  const [currency, setCurrency] = useState("CLP");
+  const [frequency, setFrequency] = useState("Mensual");
+  const [startDate, setStartDate] = useState(
+    startOfMonth(subMonths(new Date(), 6))
+  );
+  const [endDate, setEndDate] = useState(startOfMonth(new Date()));
+  const [quantity, setQuantity] = useState(10000);
+  const [data, setData] = useState<any[]>([]);
   return (
     <>
-      <img src={Bitcoin} alt="Bitcoin" className="animate-spin w-20 h-20 mx-auto my-10" />
-
-      <h1 className="text-4xl font-bold text-center">DCA Crypto Calculadora</h1>
-      <h2 className="text-2xl text-center my-10">
-        Rendimiento histórico del DCA al comprar Bitcoin (BTC) mensualmente con
-        2 US Dollar durante los últimos 1095 días.
-      </h2>
-      <div>{/* dinero invertido */}</div>
-      <div>
-        <div className="my-10 w-1/5 flex flex-col gap-2">
-          <h3 className="text-lg  text-left">Criptomoneda</h3>
-          <Select>
+      <div className="flex flex-row items-center justify-center gap-5">
+        <img src={Bitcoin} alt="Bitcoin" className="animate-spin w-20 h-20" />
+        <h1 className="text-4xl font-bold text-center my-5">
+          DCA Crypto Calculadora
+        </h1>
+      </div>
+      <div className="flex flex-row justify-center gap-10 flex-wrap mt-2">
+        <div className="my-10 flex flex-col gap-2 md:w-1/4 w-full">
+          <p className="text-lg  text-left">Criptomoneda</p>
+          <Select value={selectedCrypto} onValueChange={setCrypto}>
             <SelectTrigger>
               <SelectValue placeholder="Bitcoin" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Bitcoin</SelectItem>
-              <SelectItem value="dark">Ethereum</SelectItem>
-              <SelectItem value="system">Litecoin</SelectItem>
+              <SelectItem value="Bitcoin">Bitcoin</SelectItem>
             </SelectContent>
           </Select>
 
           <div className="flex flex-col gap-2">
-            <h3 className="text-lg  text-left">Cantidad</h3>
+            <p className="text-lg  text-left">Cantidad</p>
             <div className="flex flex-row">
-              <Input type="number" placeholder="0.00" />
-              <Select>
+              <Input
+                type="number"
+                placeholder="10000"
+                onChange={(e) => setQuantity(Number(e.target.value))}
+              />
+              <Select value={currency} onValueChange={setCurrency}>
                 <SelectTrigger>
-                  <SelectValue placeholder="USD" />
+                  <SelectValue placeholder="CLP" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="light">USD</SelectItem>
-                  <SelectItem value="dark">EUR</SelectItem>
-                  <SelectItem value="system">MXN</SelectItem>
+                  <SelectItem value="CLP">CLP</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
 
-          <h3 className="text-lg  text-left">Frecuencia</h3>
-
-          <Select>
+          <p className="text-lg  text-left">Frecuencia</p>
+          <Select value={frequency} onValueChange={setFrequency}>
             <SelectTrigger>
               <SelectValue placeholder="Mensual" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="light">Mensual</SelectItem>
-              <SelectItem value="dark">Semanal</SelectItem>
-              <SelectItem value="system">Diario</SelectItem>
+              <SelectItem value="Mensual">Mensual</SelectItem>
             </SelectContent>
           </Select>
 
-          <h3 className="text-lg  text-left">Fecha de inicio</h3>
+          <p className="text-lg  text-left">Fecha de inicio</p>
+          <DatePicker selectedDate={startDate} onDateChange={setStartDate} />
 
-          <DatePicker />
+          <p className="text-lg  text-left">Fecha de fin</p>
+          <DatePicker selectedDate={endDate} onDateChange={setEndDate} />
 
-          <h3 className="text-lg  text-left">Fecha de fin</h3>
-          <DatePicker />
         </div>
-        <div className="w-1/2">{/* chart */}</div>
       </div>
     </>
   );
