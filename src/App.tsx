@@ -19,6 +19,7 @@ import Table from "./components/dcaTable";
 import { calculateDCAInvestment } from "./utils/dca";
 import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
 import clsx from "clsx";
+import { MonthlyDCAInvestment } from "@/types";
 
 function App() {
   const [selectedCrypto, setCrypto] = useState("Bitcoin");
@@ -29,7 +30,7 @@ function App() {
   );
   const [endDate, setEndDate] = useState(startOfMonth(new Date()));
   const [quantity, setQuantity] = useState(10000);
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<MonthlyDCAInvestment[]>([]);
 
   const calculate = async () => {
     const prices = await getBTCCLPPriceForDates(startDate, endDate);

@@ -13,7 +13,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function DatePicker({ selectedDate, onDateChange } : {selectedDate: Date | undefined, onDateChange: any}) {
+export function DatePicker({ selectedDate, onDateChange } : {selectedDate: Date, onDateChange: (date: Date) => void}) {
 
   return (
     <Popover>
@@ -21,7 +21,7 @@ export function DatePicker({ selectedDate, onDateChange } : {selectedDate: Date 
         <Button
           variant={"outline"}
           className={cn(
-            "w-[240px] justify-start text-left font-normal",
+            "justify-start text-left font-normal",
             !selectedDate && "text-muted-foreground"
           )}
         >
@@ -34,7 +34,7 @@ export function DatePicker({ selectedDate, onDateChange } : {selectedDate: Date 
         <Calendar
           mode="single"
           selected={selectedDate}
-          onSelect={onDateChange}
+          onDayClick={onDateChange}
           initialFocus
           locale={es}
         />

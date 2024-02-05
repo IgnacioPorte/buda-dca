@@ -1,6 +1,8 @@
-const calculateDCAInvestment = (data: any, quantity: number) => {
+import { HistoricalPrice } from "@/types";
+
+const calculateDCAInvestment = (data: HistoricalPrice[], quantity: number) => {
   data.sort(
-    (a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    (a: HistoricalPrice, b: HistoricalPrice) => new Date(a.date).getTime() - new Date(b.date).getTime()
   );
   let fiatInvestment = 0;
   let cryptoPortfolio = 0;
@@ -8,7 +10,7 @@ const calculateDCAInvestment = (data: any, quantity: number) => {
   let gain = 0;
   let gainPercentage = 0;
 
-  const result = data.map((d: any) => {
+  const result = data.map((d: HistoricalPrice) => {
     fiatInvestment += quantity;
     cryptoPortfolio += quantity / d.price;
     portfolioFiatValue = cryptoPortfolio * d.price;

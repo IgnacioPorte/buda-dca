@@ -7,8 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from "./ui/table";
+import { MonthlyDCAInvestment } from "@/types";
 
-function dcaTable({ data }: any) {
+function dcaTable({ data }: { data: MonthlyDCAInvestment[] }) {
   return (
     <Table>
       <TableCaption className="bg-gray-50 text-center p-4 text-sm text-primary">
@@ -34,7 +35,7 @@ function dcaTable({ data }: any) {
         </TableRow>
       </TableHeader>
       <TableBody className="bg-white divide-y divide-gray-200">
-        {data.map((item: any, index: number) => (
+        {data.map((item: MonthlyDCAInvestment, index: number) => (
           <TableRow key={index} className="hover:bg-gray-50">
             <TableCell className="whitespace-nowrap text-sm text-primary">
               {item.date.substring(0, 7)}

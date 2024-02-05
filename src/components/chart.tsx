@@ -1,12 +1,14 @@
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
+import { MonthlyDCAInvestment } from "@/types";
+
 Chart.register(...registerables);
 
-function chart({ data }: any) {
-  const labels = data.map((item: any) => item.date);
-  const fiatInvestmentData = data.map((item: any) => item.fiatInvestment);
+function chart({ data }: { data: MonthlyDCAInvestment[] }) {
+  const labels = data.map((item: MonthlyDCAInvestment) => item.date);
+  const fiatInvestmentData = data.map((item: MonthlyDCAInvestment) => item.fiatInvestment);
   const portfolioFiatValueData = data.map(
-    (item: any) => item.portfolioFiatValue
+    (item: MonthlyDCAInvestment) => item.portfolioFiatValue
   );
 
   const visData = {
@@ -39,7 +41,7 @@ function chart({ data }: any) {
       y: {
         title: {
           display: true,
-          text: "Moneda invertida",
+          text: "$ CLP",
         },
       },
     },
