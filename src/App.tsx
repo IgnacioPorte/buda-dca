@@ -29,7 +29,6 @@ import { MonthlyDCAInvestment } from "@/types";
 function App() {
   const [selectedCrypto, setCrypto] = useState("Bitcoin");
   const [currency, setCurrency] = useState("CLP");
-  const [frequency, setFrequency] = useState("Mensual");
   const [startDate, setStartDate] = useState(
     startOfMonth(subMonths(new Date(), 6)),
   );
@@ -121,23 +120,15 @@ function App() {
             </div>
           </div>
 
-          <p className="text-lg  text-left">Frecuencia</p>
-          <Select value={frequency} onValueChange={setFrequency}>
-            <SelectTrigger>
-              <SelectValue placeholder="Mensual" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Mensual">Mensual</SelectItem>
-            </SelectContent>
-          </Select>
-
           <p className="text-lg  text-left">Fecha de inicio</p>
           <DatePicker selectedDate={startDate} onDateChange={setStartDate} />
 
           <p className="text-lg  text-left">Fecha de fin</p>
           <DatePicker selectedDate={endDate} onDateChange={setEndDate} />
 
-          <Button onClick={calculate}>Calcular</Button>
+          <Button onClick={calculate} className="mt-5">
+            Calcular
+          </Button>
         </div>
         <div className="md:w-2/3 w-full flex flex-col items-center">
           {data.length === 0 ? (
