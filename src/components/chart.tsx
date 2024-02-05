@@ -1,3 +1,5 @@
+import { Skeleton } from "./ui/skeleton";
+
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { MonthlyDCAInvestment } from "@/types";
@@ -49,7 +51,15 @@ function chart({ data }: { data: MonthlyDCAInvestment[] }) {
     },
   };
 
-  return <Line data={visData} options={options} style={{ minHeight: 400 }} />;
+  return (
+    <div className="md:w-2/3 w-full flex flex-col items-center">
+      {data.length === 0 ? (
+        <Skeleton className="h-full w-full rounded-xl" />
+      ) : (
+        <Line data={visData} options={options} style={{ minHeight: 400 }} />
+      )}
+    </div>
+  );
 }
 
 export default chart;

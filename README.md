@@ -46,7 +46,7 @@ Para configurar el entorno, sigue estos pasos:
 
 - Para correr los tests, ejecuta el siguiente comando:
     ```bash
-    bun test
+    bun run test
     ```
 
 ## Consideraciones
