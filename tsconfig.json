@@ -11,6 +11,8 @@
       "@/*": ["./src/*"]
     },
 
+    "esModuleInterop": true,
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Buda DCA simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requisitos
 
-Currently, two official plugins are available:
+Antes de comenzar, asegúrate de cumplir con uno de los siguientes requisitos:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Bun
+- Docker
 
-## Expanding the ESLint configuration
+## Configuración del Entorno
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Para configurar el entorno, sigue estos pasos:
 
-- Configure the top-level `parserOptions` property like this:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/IgnacioPorte/buda-dca.git
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd buda-dca
+    ```
+### Dockerizado:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3. 1. Buildea la imagen de Docker:
+   ```bash
+   docker build . -t dca
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4. 1. Corre el contenedor de Docker:
+   ```bash
+    docker run -p 8080:8080 dca
+    ```
+### Local:
+
+3. 2. Instala las dependencias:
+    ```bash
+    bun install
+    ```
+4. 2. Corre el proyecto:
+    ```bash
+    bun run dev
+    ```
+5. Abre tu navegador y navega a `http://localhost:8080`.  
+
+## Tests
+
+- Para correr los tests, ejecuta el siguiente comando:
+    ```bash
+    bun test
+    ```
+
+## Consideraciones
+- La aplicación tiene todos los requerimientos y deseables específicados
+- Los tests se corren con github actions
