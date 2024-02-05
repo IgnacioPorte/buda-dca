@@ -12,6 +12,8 @@ import { DatePicker } from "@/components/datePicker";
 import { getBTCCLPPriceForDates } from "@/api/trades";
 import { useEffect, useState } from "react";
 import { subMonths, startOfMonth } from "date-fns";
+import { Skeleton } from "./components/ui/skeleton";
+import Chart from "@/components/chart";
 import { Button } from "./components/ui/button";
 import { calculateDCAInvestment } from "./utils/dca";
 
@@ -90,6 +92,13 @@ function App() {
           <DatePicker selectedDate={endDate} onDateChange={setEndDate} />
 
           <Button onClick={calculate}>Calcular</Button>
+        </div>
+        <div className="md:w-2/3 w-full flex flex-col items-center">
+          {data.length === 0 ? (
+            <Skeleton className="h-full w-full rounded-xl" />
+          ) : (
+            <Chart data={data} />
+          )}
         </div>
       </div>
     </>
