@@ -17,6 +17,8 @@ import Chart from "@/components/chart";
 import { Button } from "./components/ui/button";
 import Table from "./components/dcaTable";
 import { calculateDCAInvestment } from "./utils/dca";
+import { DoubleArrowRightIcon } from "@radix-ui/react-icons";
+import clsx from "clsx";
 
 function App() {
   const [selectedCrypto, setCrypto] = useState("Bitcoin");
@@ -45,6 +47,43 @@ function App() {
           DCA Crypto Calculadora
         </h1>
       </div>
+      {data.length > 0 && (
+        <div className="flex flex-row justify-center gap-5 my-2 flex-wrap">
+          <div className="flex flex-col justify-center border-2 border-gray-1 my-2 p-2 w-3/4 sm:w-1/4">
+            <p className="text-2xl">Dinero Invertido</p>
+            <p className="text-lg">
+              {data[data.length - 1].fiatInvestment.toFixed(2)}
+            </p>
+          </div>
+          <div className="border-2 border-gray-1 my-2 p-1 w-3/4 sm:w-1/4">
+            <DoubleArrowRightIcon className="w-10 h-10 mx-auto" />
+            <p
+              className={clsx("text-sm text-center", {
+                "text-green-500": data[data.length - 1].gain > 0,
+                "text-red-500": data[data.length - 1].gain < 0,
+              })}
+            >
+              {data[data.length - 1].gain > 0 ? "+" : ""}
+              {data[data.length - 1].gain.toFixed(2)}
+            </p>{" "}
+            <p
+              className={clsx("text-sm text-center ", {
+                "text-green-500": data[data.length - 1].gain > 0,
+                "text-red-500": data[data.length - 1].gain < 0,
+              })}
+            >
+              {data[data.length - 1].gainPercentage.toFixed(2)}%
+            </p>
+          </div>
+          <div className="flex flex-col justify-center border-2 border-gray-1 my-2 p-1 w-3/4 sm:w-1/4">
+            <p className="text-2xl">Valor del portafolio</p>
+            <p className="text-lg">
+              {data[data.length - 1].portfolioFiatValue.toFixed(2)}
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-row justify-center gap-10 flex-wrap mt-2">
         <div className="my-10 flex flex-col gap-2 md:w-1/4 w-full">
           <p className="text-lg  text-left">Criptomoneda</p>
