@@ -4,7 +4,7 @@ import { differenceInMonths, startOfMonth } from "date-fns";
 async function getBTCCLPPriceForDates(startDate: Date, endDate: Date) {
   const months = differenceInMonths(
     startOfMonth(endDate),
-    startOfMonth(startDate)
+    startOfMonth(startDate),
   );
   const prices = [];
 
@@ -14,7 +14,7 @@ async function getBTCCLPPriceForDates(startDate: Date, endDate: Date) {
       date.getFullYear(),
       date.getMonth(),
       date.getDate(),
-      12
+      12,
     );
     const url = "/markets/btc-clp/trades";
     const params = { timestamp, limit: 1 };

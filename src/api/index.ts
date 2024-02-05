@@ -8,7 +8,7 @@ const api = rateLimit(
       "Content-Type": "application/json",
     },
   }),
-  { maxRequests: 120, perMilliseconds:  60 * 1000 }
+  { maxRequests: 120, perMilliseconds: 60 * 1000 },
 );
 
 export default api;

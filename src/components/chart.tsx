@@ -6,9 +6,11 @@ Chart.register(...registerables);
 
 function chart({ data }: { data: MonthlyDCAInvestment[] }) {
   const labels = data.map((item: MonthlyDCAInvestment) => item.date);
-  const fiatInvestmentData = data.map((item: MonthlyDCAInvestment) => item.fiatInvestment);
+  const fiatInvestmentData = data.map(
+    (item: MonthlyDCAInvestment) => item.fiatInvestment,
+  );
   const portfolioFiatValueData = data.map(
-    (item: MonthlyDCAInvestment) => item.portfolioFiatValue
+    (item: MonthlyDCAInvestment) => item.portfolioFiatValue,
   );
 
   const visData = {

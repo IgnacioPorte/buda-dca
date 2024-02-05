@@ -13,5 +13,4 @@ type MonthlyDCAInvestment = {
   gainPercentage: number;
 };
 
-
 export type { HistoricalPrice, MonthlyDCAInvestment };

@@ -31,7 +31,7 @@ function App() {
   const [currency, setCurrency] = useState("CLP");
   const [frequency, setFrequency] = useState("Mensual");
   const [startDate, setStartDate] = useState(
-    startOfMonth(subMonths(new Date(), 6))
+    startOfMonth(subMonths(new Date(), 6)),
   );
   const [endDate, setEndDate] = useState(startOfMonth(new Date()));
   const [quantity, setQuantity] = useState(10000);

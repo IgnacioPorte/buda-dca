@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier --write ./src",
     "proxy": "lcp --proxyUrl https://www.buda.com",
     "preview": "vite preview"
   },
@@ -22,6 +22,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "local-cors-proxy": "^1.1.0",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-day-picker": "^8.10.0",

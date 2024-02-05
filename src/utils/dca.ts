@@ -2,7 +2,8 @@ import { HistoricalPrice } from "@/types";
 
 const calculateDCAInvestment = (data: HistoricalPrice[], quantity: number) => {
   data.sort(
-    (a: HistoricalPrice, b: HistoricalPrice) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    (a: HistoricalPrice, b: HistoricalPrice) =>
+      new Date(a.date).getTime() - new Date(b.date).getTime(),
   );
   let fiatInvestment = 0;
   let cryptoPortfolio = 0;
