@@ -2,7 +2,7 @@
 
 ## Requisitos
 
-Antes de comenzar, asegúrate de cumplir con uno de los siguientes requisitos:
+Antes de comenzar, asegúrate de cumplir con uno de los siguientes requisitos, según la forma en que quieras correr la aplicación:
 
 - Bun
 - Docker
@@ -21,25 +21,27 @@ Para configurar el entorno, sigue estos pasos:
     ```
 ### Dockerizado:
 
-3. 1. Buildea la imagen de Docker:
+3. Buildea la imagen de Docker:
    ```bash
    docker build . -t dca
    ```
 
-4. 1. Corre el contenedor de Docker:
+4. Corre el contenedor de Docker:
    ```bash
     docker run -p 8080:8080 dca
     ```
 ### Local:
 
-3. 2. Instala las dependencias:
+3. Instala las dependencias:
     ```bash
     bun install
     ```
-4. 2. Corre el proyecto:
+4. Corre el proyecto:
     ```bash
     bun run dev
-    ```
+    ``` 
+
+\
 5. Abre tu navegador y navega a `http://localhost:8080`.  
 
 ## Tests
@@ -50,5 +52,5 @@ Para configurar el entorno, sigue estos pasos:
     ```
 
 ## Consideraciones
-- La aplicación tiene todos los requerimientos y deseables específicados
+- La aplicación tiene todos los requerimientos y deseables especificados
 - Los tests se corren con github actions

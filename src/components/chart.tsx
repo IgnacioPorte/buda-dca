@@ -1,12 +1,33 @@
+import { useEffect, useState } from "react";
+
 import { Skeleton } from "./ui/skeleton";
 
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { MonthlyDCAInvestment } from "@/types";
 
+import Bitcoin from "@/assets/bitcoin.png";
+import Fiat from "@/assets/money.png";
+
 Chart.register(...registerables);
 
-function chart({ data }: { data: MonthlyDCAInvestment[] }) {
+function LinearChart({ data }: { data: MonthlyDCAInvestment[] }) {
+  const [pointImageBitcoin, setPointImage] = useState<HTMLImageElement | null>(
+    null,
+  );
+  const [pointImageFiat, setPointFiat] = useState<HTMLImageElement | null>(
+    null,
+  );
+
+  useEffect(() => {
+    const imgBitcoin = new Image(16, 16);
+    imgBitcoin.onload = () => setPointImage(imgBitcoin);
+    imgBitcoin.src = Bitcoin;
+    const imgFiat = new Image(16, 16);
+    imgFiat.onload = () => setPointFiat(imgFiat);
+    imgFiat.src = Fiat;
+  }, []);
+
   const labels = data.map((item: MonthlyDCAInvestment) => item.date);
   const fiatInvestmentData = data.map(
     (item: MonthlyDCAInvestment) => item.fiatInvestment,
@@ -19,18 +40,30 @@ function chart({ data }: { data: MonthlyDCAInvestment[] }) {
     labels,
     datasets: [
       {
-        label: "Monto invertido",
-        data: fiatInvestmentData,
-        borderColor: "#48C99E",
-        backgroundColor: "rgba(72, 201, 158, 0.5)",
-        yAxisID: "y",
-      },
-      {
         label: "Valor del portafolio",
         data: portfolioFiatValueData,
         borderColor: "#F7B86B",
         backgroundColor: "rgba(247, 184, 107, 0.5)",
         yAxisID: "y",
+        pointStyle: () => {
+          if (pointImageBitcoin) {
+            return pointImageBitcoin;
+          }
+          return "circle";
+        },
+      },
+      {
+        label: "Monto invertido",
+        data: fiatInvestmentData,
+        borderColor: "#48C99E",
+        backgroundColor: "rgba(72, 201, 158, 0.5)",
+        yAxisID: "y",
+        pointStyle: () => {
+          if (pointImageFiat) {
+            return pointImageFiat;
+          }
+          return "circle";
+        },
       },
     ],
   };
@@ -62,4 +95,4 @@ function chart({ data }: { data: MonthlyDCAInvestment[] }) {
   );
 }
 
-export default chart;
+export default LinearChart;
