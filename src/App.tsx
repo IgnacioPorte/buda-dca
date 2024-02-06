@@ -40,15 +40,14 @@ function App() {
   };
 
   async function fetchPricesAndCalculateDCA() {
-    if (quantity <= 0) {
+    if (quantity <= 0)
       return showToast("Por favor ingresa una cantidad positiva.");
-    }
 
-    if (startDate >= endDate) {
+    if (startDate >= endDate)
       return showToast(
         "La fecha de inicio debe ser anterior a la fecha de término.",
       );
-    }
+
     setIsFetching(true);
     try {
       const prices = await getBTCCLPPriceForDates(startDate, endDate);
