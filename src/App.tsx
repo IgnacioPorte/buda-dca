@@ -87,7 +87,7 @@ function App() {
               <Input
                 type="number"
                 value={quantity}
-                onChange={(e) => setQuantity(Number(e.target.value))}
+                onChange={e => setQuantity(Number(e.target.value))}
               />
               <p>
                 <span className="text-lg  text-left">CLP</span>
