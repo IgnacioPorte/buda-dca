@@ -4,6 +4,9 @@ FROM oven/bun:latest as base
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
+# Install git
+RUN apt-get update && apt-get install -y git
+
 # Copy the entire project into the container
 COPY . .
 
