@@ -24,7 +24,7 @@ export default function investmentSummary({
           <div className="flex flex-col justify-center border-2 border-gray-1 my-2 p-2 w-3/4 sm:w-1/4">
             <p className="text-2xl">Dinero Invertido</p>
             <p className="text-lg">
-              {data[data.length - 1].fiatInvestment.toFixed(2)}
+              $ {data[data.length - 1].fiatInvestment.toFixed(2)}
             </p>
           </div>
           <div className="border-2 border-gray-1 my-2 p-1 w-3/4 sm:w-1/4">
@@ -50,7 +50,7 @@ export default function investmentSummary({
           <div className="flex flex-col justify-center border-2 border-gray-1 my-2 p-1 w-3/4 sm:w-1/4">
             <p className="text-2xl">Valor del portafolio</p>
             <p className="text-lg">
-              {data[data.length - 1].portfolioFiatValue.toFixed(2)}
+              $ {data[data.length - 1].portfolioFiatValue.toFixed(2)}
             </p>
           </div>
         </>

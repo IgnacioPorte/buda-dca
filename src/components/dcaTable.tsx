@@ -9,6 +9,8 @@ import {
 } from "./ui/table";
 import { Skeleton } from "./ui/skeleton";
 
+import clsx from "clsx";
+
 import { MonthlyDCAInvestment } from "@/types";
 
 function dcaTable({ data }: { data: MonthlyDCAInvestment[] }) {
@@ -47,15 +49,25 @@ function dcaTable({ data }: { data: MonthlyDCAInvestment[] }) {
                   {item.date.substring(0, 7)}
                 </TableCell>
                 <TableCell className="whitespace-nowrap text-sm text-primary">
-                  {item.fiatInvestment.toFixed(2)}
+                  $ {item.fiatInvestment.toFixed(2)}
                 </TableCell>
                 <TableCell className="whitespace-nowrap text-sm text-primary">
-                  {item.portfolioFiatValue.toFixed(2)}
+                  $ {item.portfolioFiatValue.toFixed(2)}
                 </TableCell>
-                <TableCell className="whitespace-nowrap text-sm text-primary">
+                <TableCell
+                  className={clsx(
+                    "whitespace-nowrap text-sm",
+                    item.gain < 0 ? "text-red-500" : "text-green-500",
+                  )}
+                >
                   {item.gain.toFixed(2)}
                 </TableCell>
-                <TableCell className="whitespace-nowrap text-sm text-primary">
+                <TableCell
+                  className={clsx(
+                    "whitespace-nowrap text-sm",
+                    item.gainPercentage < 0 ? "text-red-500" : "text-green-500",
+                  )}
+                >
                   {item.gainPercentage.toFixed(2)}%
                 </TableCell>
               </TableRow>

@@ -66,20 +66,22 @@ exports[`Table Component Tests > renders chart with data 1`] = `
                 <td
                   class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
                 >
+                  $ 
                   100.00
                 </td>
                 <td
                   class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
                 >
+                  $ 
                   150.00
                 </td>
                 <td
-                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
                 >
                   0.00
                 </td>
                 <td
-                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
                 >
                   0.00
                   %
@@ -96,20 +98,22 @@ exports[`Table Component Tests > renders chart with data 1`] = `
                 <td
                   class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
                 >
+                  $ 
                   200.00
                 </td>
                 <td
                   class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
                 >
+                  $ 
                   250.00
                 </td>
                 <td
-                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
                 >
                   50.00
                 </td>
                 <td
-                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                  class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
                 >
                   25.00
                   %
@@ -183,20 +187,22 @@ exports[`Table Component Tests > renders chart with data 1`] = `
               <td
                 class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
               >
+                $ 
                 100.00
               </td>
               <td
                 class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
               >
+                $ 
                 150.00
               </td>
               <td
-                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
               >
                 0.00
               </td>
               <td
-                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
               >
                 0.00
                 %
@@ -213,20 +219,22 @@ exports[`Table Component Tests > renders chart with data 1`] = `
               <td
                 class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
               >
+                $ 
                 200.00
               </td>
               <td
                 class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
               >
+                $ 
                 250.00
               </td>
               <td
-                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
               >
                 50.00
               </td>
               <td
-                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-primary"
+                class="p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] whitespace-nowrap text-sm text-green-500"
               >
                 25.00
                 %

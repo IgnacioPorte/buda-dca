@@ -19,6 +19,7 @@ exports[`LinearChart Component Tests > renders chart with data 1`] = `
           <p
             class="text-lg"
           >
+            $ 
             200.00
           </p>
         </div>
@@ -65,6 +66,7 @@ exports[`LinearChart Component Tests > renders chart with data 1`] = `
           <p
             class="text-lg"
           >
+            $ 
             250.00
           </p>
         </div>
@@ -86,6 +88,7 @@ exports[`LinearChart Component Tests > renders chart with data 1`] = `
         <p
           class="text-lg"
         >
+          $ 
           200.00
         </p>
       </div>
@@ -132,6 +135,7 @@ exports[`LinearChart Component Tests > renders chart with data 1`] = `
         <p
           class="text-lg"
         >
+          $ 
           250.00
         </p>
       </div>

@@ -33,7 +33,7 @@ describe("LinearChart Component Tests", () => {
     const investmentSummary = render(<InvestmentSummary data={mockData} />);
     expect(investmentSummary).toMatchSnapshot();
     expect(investmentSummary.getByText("25.00%")).toBeDefined();
-    expect(investmentSummary.getByText("200.00")).toBeDefined();
-    expect(investmentSummary.getByText("250.00")).toBeDefined();
+    expect(investmentSummary.getByText("$ 200.00")).toBeDefined();
+    expect(investmentSummary.getByText("$ 250.00")).toBeDefined();
   });
 });
