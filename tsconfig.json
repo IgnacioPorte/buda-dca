@@ -11,8 +11,6 @@
       "@/*": ["./src/*"]
     },
 
-    "esModuleInterop": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -27,8 +25,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "typeRoots": ["../node_modules/@types", "./node_modules/@types", "../node_modules/@testing-library"],
-  "types": ["jest", "jest-dom"],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

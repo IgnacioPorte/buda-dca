@@ -1,5 +1,6 @@
 import { calculateDCAInvestment } from "@/utils/dca";
 import { HistoricalPrice, MonthlyDCAInvestment } from "@/types";
+import { describe, expect, it } from "vitest";
 
 describe("calculateDCAInvestment", () => {
   const quantity = 20;
@@ -129,7 +130,7 @@ describe("calculateDCAInvestment", () => {
     expect(investment).toStrictEqual(expectedDCA);
   });
 
-  it("Caculate DCA complex", () => {
+  it("Caculate complex DCA", () => {
     const investment = calculateDCAInvestment(data2, quantity);
     expect(investment).toStrictEqual(expectedDCA2);
   });
