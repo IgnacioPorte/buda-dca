@@ -50,10 +50,3 @@ Para configurar el entorno, sigue estos pasos:
     ```bash
     bun run test
     ```
-
-## Consideraciones
-- La aplicación tiene todos los requerimientos y deseables especificados
-- Los tests se corren con github actions
-- La aplicación tiene pre-commit hooks con eslint y prettier
-- La aplicación tiene pre-push hooks con tests
-- La aplicación tiene CD con Netlify a [este link](https://budca.netlify.app/)
